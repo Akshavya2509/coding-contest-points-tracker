@@ -8,20 +8,34 @@
     <script defer src="app.js"></script>
 </head>
 <body>
-    <div>
+    <div class="top-bar-container">
+        <div class="top-bar">
+            <div class="logo" style="color: rgb(26, 26, 26)"><img src="leetcode.png" width="25px"> LeetForces</div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+                <button type="button">Search</button>
+            </div>
+            <div class="options">
+                <!-- Add your additional options here -->
+                <a href="#">Home</a>
+                <a href="#">Contact Us</a>
+                <!-- Add more options as needed -->
+            </div>
+        </div>
+    </div>
+    <div class="flex-container">
+        <div class="container">
         <h1>Welcome to the contest page</h1>
         <p>*Instruction: If you are able to submit the questions in the given time, you will be rewarded with points</p>
-        <p>
-            if the number of questions in the contest are:
-            <br>
-            -> 2 then solve at least 1
-            <br>
-            -> 3 then solve at least 2
-            <br>
-            -> 4 then solve at least 2
-        </p>
-    </div>
+        <p>If the number of questions in the contest is:</p>
+            <ul>
+                <li>2, then solve at least 1</li>
+                <li>3, then solve at least 2</li>
+                <li>4, then solve at least 2</li>
+            </ul>
+        </div>
     <div class="form-div">
+        <h1>Contest Questions</h1>
         <form id="contestForm" action="/submit" method="post">
             <label><input type="checkbox" name="option1" value="option1"> Option 1</label>
             <br>
@@ -35,11 +49,13 @@
             <label><input type="checkbox" name="option4" value="option4"> Option 4</label>
             <br>
             <br>
-            <input type="button" value="Submit" onclick="submitForm()"> <!-- Change type to "button" to prevent form submission -->
+            <input type="button" value="Submit" onclick="submitForm()">
             <button type="button" onclick="startTimer()">Start Timer</button>
+            <button type="button" onclick="pauseResumeTimer()">Pause/Resume Timer</button>
             <div id="timer">Timer: <span id="countdown">--:--</span></div>
             <div id="finalScore"></div>
         </form>
+    </div>
     </div>
 </body>
 </html>

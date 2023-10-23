@@ -1,11 +1,132 @@
-body{
-    background-color: rgb(0, 0, 0);
-    color: white;
+body {
+    padding: 10px;
+    font-family: 'Arial', sans-serif;
+    background-color: #292929;
+    color: #fff;
+    margin: 0;
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
-.form-div{
-    padding-left: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-color: rgba(20, 20, 20, 0.6);
-    color: rgb(240, 236, 236);
+.flex-container {
+    display: flex;
+}
+.intro-div {
+    padding-right: 20px;
+}
+
+.container {
+    max-width: 800px;
+    padding: 100px;
+    
+}
+
+h1 {
+    color: #ffcc00;
+}
+
+p {
+    line-height: 1.5;
+    margin-bottom: 20px; /* Add margin between paragraphs */
+}
+
+.form-div {
+    background-color: rgba(20, 20, 20, 0.8);
+    padding: 20px;
+    border-radius: 30px;
+    margin-top: 20px;
+    padding-top: 110px;
+    padding-left: 50px;
+}
+
+form {
+    max-width: 400px;
+    width: 700px;
+    height: 400px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+input[type="submit"],
+button {
+    background-color: #ffcc00;
+    color: #292929;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px; /* Add margin between buttons */
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-color: #e6b800;
+}
+
+#timer {
+    font-size: 1.2em;
+    margin-top: 15px;
+}
+
+#finalScore {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ffcc00;
+    margin-top: 20px;
+}
+
+a {
+    color: #e6b800;
+    text-decoration: none;
+    font-size: 20px;
+    margin-right: 10px; /* Add margin between links */
+}
+
+.top-bar-container {
+    background-color: #333;
+}
+
+.top-bar {
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.search-bar button {
+    background-color: #ffcc00;
+    color: #333;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.options a {
+    color: #fff;
+    margin-left: 10px;
+    text-decoration: none;
 }
