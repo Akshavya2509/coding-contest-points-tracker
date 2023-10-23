@@ -35,9 +35,10 @@
             <label><input type="checkbox" name="option4" value="option4"> Option 4</label>
             <br>
             <br>
-            <input type="submit" value="Submit" onclick="submitForm()">
+            <input type="button" value="Submit" onclick="submitForm()"> <!-- Change type to "button" to prevent form submission -->
             <button type="button" onclick="startTimer()">Start Timer</button>
             <div id="timer">Timer: <span id="countdown">--:--</span></div>
+            <div id="finalScore"></div>
         </form>
     </div>
 </body>

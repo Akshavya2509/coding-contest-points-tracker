@@ -1,6 +1,13 @@
+// Scoring configuration (points for each option)
+var optionScores = {
+    option1: 1,
+    option2: 1,
+    option3: 1,
+    option4: 1,
+};
+
 // Timer logic
-x = 10;
-var seconds = x; // 10 minutes
+var seconds = 600; // 10 minutes
 var timerInterval;
 var autoSubmit = true; // Flag to indicate whether to auto-submit the form
 
@@ -19,7 +26,7 @@ function updateTimer() {
         clearInterval(timerInterval);
         if (autoSubmit) {
             // Auto-submit the form when the timer reaches 0
-            document.getElementById('contestForm').submit();
+            submitForm();
         }
     }
 }
@@ -27,17 +34,29 @@ function updateTimer() {
 function startTimer() {
     autoSubmit = true; // Reset the auto-submit flag
     clearInterval(timerInterval); // Reset the timer if already running
-    seconds = x; // Reset the timer to 10 minutes
+    seconds = 600; // Reset the timer to 10 minutes
     updateTimer(); // Display the initial time immediately
     timerInterval = setInterval(updateTimer, 1000);
 }
 
 // Form submission logic
 function submitForm() {
-    // Calculate and display scores (example)
+    // Calculate and display scores
     var selectedOptions = document.querySelectorAll('input[type="checkbox"]:checked');
-    var score = selectedOptions.length; // Example: 1 point for each selected option
-    alert('Your score: ' + score + ' out of ' + selectedOptions.length);
+    var score = 0;
+
+    selectedOptions.forEach(function (option) {
+        var optionName = option.name;
+        score += optionScores[optionName] || 0;
+    });
+
+    // Display the final score on the page
+    document.getElementById('finalScore').textContent = 'Your final score: ' + score;
+
+    // Reset the timer
+    clearInterval(timerInterval);
+    seconds = 600; // Reset the timer to 10 minutes
+    document.getElementById('countdown').textContent = '10:00';
 
     // Disable auto-submit when the form is submitted manually
     autoSubmit = false;
