@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contest</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <script defer src="app.js"></script>
 </head>
 <body>
     <div>
@@ -36,10 +36,9 @@
             <br>
             <br>
             <input type="submit" value="Submit" onclick="submitForm()">
+            <button type="button" onclick="startTimer()">Start Timer</button>
+            <div id="timer">Timer: <span id="countdown">--:--</span></div>
         </form>
     </div>
-
-    <div id="timer">Timer: <span id="countdown">--:--</span></div>
-    <button onclick="startTimer()">Start Timer</button>
 </body>
 </html>
