@@ -1,25 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-us">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contest</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
     <div>
         <h1>Welcome to the contest page</h1>
-        <p>*Instruction: If u are able to submit the questions in the given time then u will be rewarded with points</p>
+        <p>*Instruction: If you are able to submit the questions in the given time, you will be rewarded with points</p>
         <p>
-            if number of questions in contest are:
+            if the number of questions in the contest are:
             <br>
-            -> 2 then solve atleast 1
+            -> 2 then solve at least 1
             <br>
-            -> 3 then solve atleast 2
+            -> 3 then solve at least 2
             <br>
-            -> 4 then solve atleast 2
+            -> 4 then solve at least 2
         </p>
     </div>
     <div class="form-div">
-        <form action="/submit" method="post">
+        <form id="contestForm" action="/submit" method="post">
             <label><input type="checkbox" name="option1" value="option1"> Option 1</label>
             <br>
             <br>
@@ -29,11 +32,14 @@
             <label><input type="checkbox" name="option3" value="option3"> Option 3</label>
             <br>
             <br>
-            <label><input type="checkbox" name="option3" value="option3"> Option 3</label>
+            <label><input type="checkbox" name="option4" value="option4"> Option 4</label>
             <br>
             <br>
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" onclick="submitForm()">
         </form>
     </div>
+
+    <div id="timer">Timer: <span id="countdown">--:--</span></div>
+    <button onclick="startTimer()">Start Timer</button>
 </body>
 </html>
